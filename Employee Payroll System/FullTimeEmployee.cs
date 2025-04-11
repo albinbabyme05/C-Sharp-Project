@@ -9,27 +9,52 @@ namespace Employee_Payroll_System
     internal class FullTimeEmployee : Employee
     {
 
-        public static double OverTimeBonous = 0.2;
+        private double BaseSalary = 4500;
+        private string Position { get; set; }
+        private int Hours { get; set; }
+        private double OverTimeBonus = 0.2;
+        private double TaxC1 = 0.5;
+
         
-        public int WorkedHours;
-        private double FullTimeEmployeeSalary;
-        public FullTimeEmployee(string name, string id, double salary, int workedHours)
-            :base(name, id, salary)
+        public FullTimeEmployee(string name, string id,string position, int hours): base(name, id)
         {
-            WorkedHours = workedHours;
+            Hours = hours;
+            Position = position;
         }
 
+        public double GetBaseSalary() => BaseSalary;
+        public void SetBaseSalary() { BaseSalary = 4500; }
+        
         public override double CalculatePay()
         {
-            if(WorkedHours > 40)
+            double salary = BaseSalary;
+            switch (Position)
             {
-                return GetSalary() * (1 + OverTimeBonous);
-            }else if (WorkedHours <= 0)
-            {
-                Console.WriteLine("Working hours can not be Zero or Negtive");
+                case "manager":
+                    salary += 1500;
+                    break;
+                case "teamlead":
+                    salary += 1000;
+                    break;
+                case "engineer":
+                    salary += 500;
+                    break;
+                default:
+                    salary += 0;
+                    break;
             }
-            return GetSalary();
-            
+
+            if (Hours > 160)
+            {
+                salary += (Hours - 160) * OverTimeBonus;
+            }
+
+            if (salary > 8000)
+            {
+                salary *= (1-TaxC1);
+                return salary;
+            }
+            return salary;
         }
     }
 }
