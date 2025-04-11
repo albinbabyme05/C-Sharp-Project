@@ -47,16 +47,13 @@ namespace Employee_Payroll_System
             {
                 case "intern":
                     salary += HourlyRate * GetWokedHours() * (1-taxAmount);
-                    Console.WriteLine($"worked hours: {HourlyRate}, getworked: {GetWokedHours()}, salary : {salary}");
                     break;
                 case "ws":
                     salary += HourlyRate * GetWokedHours();
-                    Console.WriteLine($"worked hours: {HourlyRate}, getworked: {GetWokedHours()}, salary : {salary}");
                     break;
                 default:
                     break;
             }
-            Console.WriteLine($"worked hours: {HourlyRate}, getworked: {GetWokedHours()}, salary : {salary}");
             return salary;
             
         }
