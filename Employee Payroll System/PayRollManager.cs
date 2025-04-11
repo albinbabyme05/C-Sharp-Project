@@ -19,8 +19,7 @@ namespace Employee_Payroll_System
         {
             foreach (var employe in payReports)
             {
-                Console.WriteLine($"Name: {employe.Name} | Id: {employe.GetId()} |" +
-                    $" Base Salary: {employe.GetSalary()} | Total: {employe.CalculatePay()} ");
+                Console.WriteLine($"Name: {employe.Name} | Id: {employe.Id} |  Total: {employe.CalculatePay()} ");
                 Console.WriteLine("=========================================================");
             }
         }
