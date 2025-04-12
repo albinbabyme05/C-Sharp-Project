@@ -39,29 +39,14 @@ Each of these subclasses inherits from the `Room` class. They override `Calculat
 ### 3. **BookingManager**
 Manages all bookings and room availability.
 
-- **Properties**:
-  - `Rooms`: A list of all rooms in the hotel.
-  - `Bookings`: Records which rooms are booked.
 
-- **Methods**:
-  - `AddRoom(Room room)`: Adds a room to the system.
-  - `FindAvailableRooms()`: Returns a list of rooms that are available.
-  - `BookRoom(int roomNumber)`: Books a room (marks it as "Booked").
-  - `CheckOutRoom(int roomNumber)`: Marks a room as "Available".
+
+
 
 ---
 
-## Key Rules and Logic
-- **Rooms cannot be booked if already booked**.
-- **SuiteRoom**: Minimum stay of 2 nights.
-- **Discount**: A 10% discount for bookings over 7 nights.
-- **Extra charges** for Deluxe and Suite rooms based on services (e.g., room service, food, spa).
+## Result
 
----
 
-## Instructions to Run the Project
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/hotel-booking-system.git
+![d](https://github.com/user-attachments/assets/80d7f17e-d1d3-4eb9-9cca-45e370e298a7)
 
