@@ -9,7 +9,7 @@ namespace Hotel_Room_Booking_System
     internal class StandardRoom : Room
     {
         private double BasePrice = 60;
-        public StandardRoom(string name, int numberOfGuest, int countStayPerNight) : base(name, numberOfGuest, countStayPerNight)
+        public StandardRoom(string name,int roomNumber, int numberOfGuest, int countStayPerNight) : base(name, roomNumber, numberOfGuest, countStayPerNight)
         {
 
         }
