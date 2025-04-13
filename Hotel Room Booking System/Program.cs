@@ -25,12 +25,12 @@ namespace Hotel_Room_Booking_System
             manager.AddGuest(Sguest2);
 
 
-            manager.BookRoom("Albin", 101, 1, 4);
-            manager.BookRoom("Aline", 103, 1, 4);
-            manager.BookRoom("Angel", 105, 1, 4);
-            manager.BookRoom("unni", 102, 1, 8);
-            manager.BookRoom("Amal", 104, 1, 8);
-            manager.BookRoom("Albin", 106, 1, 8);
+            manager.BookRoom("Musk", 101, 1, 4);
+            manager.BookRoom("Gates", 103, 1, 4);
+            manager.BookRoom("Ambani", 105, 1, 4);
+            manager.BookRoom("jacky", 102, 1, 8);
+            manager.BookRoom("lal", 104, 1, 8);
+            manager.BookRoom("fahad", 106, 1, 8);
 
             manager.showAllDetails();
 
