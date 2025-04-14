@@ -12,21 +12,21 @@ namespace RentACar
         public bool IsAvailable=true;
         private List<Vehicle> kart = new List<Vehicle>();
 
-        public void AddVehicle(Vehicle item)
+        public void AddVehicle(Vehicle vehicle)
         {
-            kart.Add(item);
+            kart.Add(vehicle);
         }
 
        
         public void RentedAVehicle(string vehicle_id, int numberOfDaysRented)
         {
-            foreach (var item in kart)
+            foreach (var vehicle in kart)
             {
-                if (item.GetVehicleId() == vehicle_id)
+                if (vehicle.GetVehicleId() == vehicle_id)
                 {
-                    item.SetStatus("Rented");
-                    item.SetRentedDay(numberOfDaysRented);
-                    Console.WriteLine($"vechile {item.GetModel()} Id: {item.GetVehicleId()} Rented ");
+                    vehicle.SetStatus("Rented");
+                    vehicle.SetRentedDay(numberOfDaysRented);
+                    Console.WriteLine($"vechile {vehicle.GetModel()} Id: {vehicle.GetVehicleId()} Rented ");
                     Console.WriteLine("==========================================================================");
                     return;
                 }
@@ -36,16 +36,16 @@ namespace RentACar
 
         public void DisplayDetails()
         {
-            foreach (var item in kart)
+            foreach (var vehicle in kart)
             {
-                if (item.GetStatus() == "Available")
+                if (vehicle.GetStatus() == "Available")
                 {
-                    Console.WriteLine($"vechileId: {item.GetVehicleId()} - Brand: {item.GetBrand()}  - Model: {item.GetModel()} - Status: {item.GetStatus()} ");
+                    Console.WriteLine($"vechileId: {vehicle.GetVehicleId()} - Brand: {vehicle.GetBrand()}  - Model: {vehicle.GetModel()} - Status: {vehicle.GetStatus()} ");
                     
                 }
                 else
                 {
-                    Console.WriteLine($"vechileId: {item.GetVehicleId()}  - Brand: {item.GetBrand()} - Model: {item.GetModel()} - Status: Rented ");
+                    Console.WriteLine($"vechileId: {vehicle.GetVehicleId()}  - Brand: {vehicle.GetBrand()} - Model: {vehicle.GetModel()} - Status: Rented ");
                     
                 }
             }
@@ -54,12 +54,12 @@ namespace RentACar
 
         public void Return(string vehicleId)
         {
-            foreach (var item in kart)
+            foreach (var vehicle in kart)
             {
-                if(item.GetVehicleId() == vehicleId)
+                if(vehicle.GetVehicleId() == vehicleId)
                 {
-                    item.SetStatus("Available");
-                    Console.WriteLine($"vechile {item.GetModel()} Id: {item.GetVehicleId()} Available Now ");
+                    vehicle.SetStatus("Available");
+                    Console.WriteLine($"vechile {vehicle.GetModel()} Id: {vehicle.GetVehicleId()} Available Now ");
                     Console.WriteLine("==========================================================================");
                     return;
                 }
@@ -68,15 +68,15 @@ namespace RentACar
 
         public void RentReport(string vechicleId)
         {
-            foreach (var item in kart)
+            foreach (var vehicle in kart)
             {
-                if (item.GetVehicleId() == vechicleId && item.GetStatus() == "Rented")
+                if (vehicle.GetVehicleId() == vechicleId && vehicle.GetStatus() == "Rented")
                 {
-                    Console.WriteLine($"vechileId: {item.GetVehicleId()} - Model: {item.GetModel()} - Rented for: {item.GetRentedDay()} Days -  RentAmount: {item.CalculateRent(item.GetVehicleId())} ");
+                    Console.WriteLine($"vechileId: {vehicle.GetVehicleId()} - Model: {vehicle.GetModel()} - Rented for: {vehicle.GetRentedDay()} Days -  RentAmount: {vehicle.CalculateRent(vehicle.GetVehicleId())} ");
                 }
-                else if (item.GetVehicleId() == vechicleId && item.GetStatus()== "Available")
+                else if (vehicle.GetVehicleId() == vechicleId && vehicle.GetStatus()== "Available")
                 {
-                    Console.WriteLine($"vechileId: {item.GetVehicleId()} - Model: {item.GetModel()} is Not Rented ");
+                    Console.WriteLine($"vechileId: {vehicle.GetVehicleId()} - Model: {vehicle.GetModel()} is Not Rented ");
                 }
             }
         }
