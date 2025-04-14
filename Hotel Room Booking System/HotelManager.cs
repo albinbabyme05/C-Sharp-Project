@@ -74,7 +74,7 @@ namespace Hotel_Room_Booking_System
         {
             foreach (var room in chart)
             {
-                if(room.GetStatus()== "Availble")
+                if(room.GetStatus() == "Availble")
                 {
                     Console.WriteLine($"Room Number : {room.GetRoomNumber()} | Status: {room.GetStatus()}");
                 }
@@ -86,7 +86,7 @@ namespace Hotel_Room_Booking_System
             }
             Console.WriteLine("======================================");
         }
-        
 
+        
     }
 }
