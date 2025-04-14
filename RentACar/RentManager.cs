@@ -12,13 +12,20 @@ namespace RentACar
         public bool IsAvailable=true;
         private List<Vehicle> kart = new List<Vehicle>();
 
+<<<<<<< HEAD
+=======
+        // print records
+        private List<RentalRecord> rentalHistory = new List<RentalRecord>();
+
+
+>>>>>>> rentAcar
         public void AddVehicle(Vehicle vehicle)
         {
             kart.Add(vehicle);
         }
 
        
-        public void RentedAVehicle(string vehicle_id, int numberOfDaysRented)
+        public void RentedAVehicle(string vehicle_id, int numberOfDaysRented, Customer customer)
         {
             foreach (var vehicle in kart)
             {
@@ -26,7 +33,15 @@ namespace RentACar
                 {
                     vehicle.SetStatus("Rented");
                     vehicle.SetRentedDay(numberOfDaysRented);
+<<<<<<< HEAD
                     Console.WriteLine($"vechile {vehicle.GetModel()} Id: {vehicle.GetVehicleId()} Rented ");
+=======
+
+                    RentalRecord r1 = new RentalRecord(customer, vehicle);
+                    rentalHistory.Add(r1);
+
+                    Console.WriteLine($"vechile {vehicle.GetModel()} Id: {vehicle.GetVehicleId()} Rented to {customer.GetName()} ");
+>>>>>>> rentAcar
                     Console.WriteLine("==========================================================================");
                     return;
                 }
@@ -72,12 +87,26 @@ namespace RentACar
             {
                 if (vehicle.GetVehicleId() == vechicleId && vehicle.GetStatus() == "Rented")
                 {
+<<<<<<< HEAD
                     Console.WriteLine($"vechileId: {vehicle.GetVehicleId()} - Model: {vehicle.GetModel()} - Rented for: {vehicle.GetRentedDay()} Days -  RentAmount: {vehicle.CalculateRent(vehicle.GetVehicleId())} ");
                 }
                 else if (vehicle.GetVehicleId() == vechicleId && vehicle.GetStatus()== "Available")
+=======
+                    Console.WriteLine($" vechileId: {vehicle.GetVehicleId()} - Model: {vehicle.GetModel()} - Rented for: {vehicle.GetRentedDay()} Days -  RentAmount: {vehicle.CalculateRent(vehicle.GetVehicleId())} ");
+                }
+                else if (vehicle.GetVehicleId() == vechicleId && vehicle.GetStatus() == "Available")
+>>>>>>> rentAcar
                 {
                     Console.WriteLine($"vechileId: {vehicle.GetVehicleId()} - Model: {vehicle.GetModel()} is Not Rented ");
                 }
+            }
+        }
+
+        public void PrintRentReport()
+        {
+            foreach (var record in rentalHistory)
+            {
+                Console.WriteLine(record.PrintReport());
             }
         }
     }
