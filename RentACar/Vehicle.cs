@@ -14,7 +14,7 @@ namespace RentACar
         protected string Model;
         protected string Brand;
         protected double RentRate;
-        public bool IsAvailble;
+        private string Status;
   
         
 
@@ -22,10 +22,22 @@ namespace RentACar
         {
             VehicleId = vehicleId;
             Model = model;
-            Brand = Brand;
+            Brand = brand;
             RentRate = 0;
-            IsAvailble = true;
+            Status = "Available";
         }
+
+        public void SetStatus(string status) { Status = status; }
+        public string GetStatus() => Status;
+
+        public string GetVehicleId() => VehicleId;
+
+        public void SetModel(string model) { Model = model; }
+        public string GetModel() => Model;
+
+        public void SetBrand(string brand) { Brand = brand; }
+        public string GetBrand() => Brand;
+
 
         public abstract double CalculateRent(int days);
         public  void DisplayDetails()
