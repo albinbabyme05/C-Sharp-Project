@@ -33,15 +33,15 @@ namespace RentACar
                 {
                     vehicle.SetStatus("Rented");
                     vehicle.SetRentedDay(numberOfDaysRented);
-<<<<<<< HEAD
+
                     Console.WriteLine($"vechile {vehicle.GetModel()} Id: {vehicle.GetVehicleId()} Rented ");
-=======
+
 
                     RentalRecord r1 = new RentalRecord(customer, vehicle);
                     rentalHistory.Add(r1);
 
                     Console.WriteLine($"vechile {vehicle.GetModel()} Id: {vehicle.GetVehicleId()} Rented to {customer.GetName()} ");
->>>>>>> rentAcar
+
                     Console.WriteLine("==========================================================================");
                     return;
                 }
@@ -87,15 +87,15 @@ namespace RentACar
             {
                 if (vehicle.GetVehicleId() == vechicleId && vehicle.GetStatus() == "Rented")
                 {
-<<<<<<< HEAD
+
                     Console.WriteLine($"vechileId: {vehicle.GetVehicleId()} - Model: {vehicle.GetModel()} - Rented for: {vehicle.GetRentedDay()} Days -  RentAmount: {vehicle.CalculateRent(vehicle.GetVehicleId())} ");
                 }
                 else if (vehicle.GetVehicleId() == vechicleId && vehicle.GetStatus()== "Available")
-=======
+
                     Console.WriteLine($" vechileId: {vehicle.GetVehicleId()} - Model: {vehicle.GetModel()} - Rented for: {vehicle.GetRentedDay()} Days -  RentAmount: {vehicle.CalculateRent(vehicle.GetVehicleId())} ");
                 }
                 else if (vehicle.GetVehicleId() == vechicleId && vehicle.GetStatus() == "Available")
->>>>>>> rentAcar
+
                 {
                     Console.WriteLine($"vechileId: {vehicle.GetVehicleId()} - Model: {vehicle.GetModel()} is Not Rented ");
                 }
