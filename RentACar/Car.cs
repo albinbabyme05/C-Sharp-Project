@@ -12,7 +12,7 @@ namespace RentACar
         private double DailyRate;
         public Car(string vehicleId, string model, string brand):base(vehicleId, model, brand)
         {
-             BaseRate = 30;
+             BaseRate = 40;
              DailyRate = 10;
         }
         public override double CalculateRent(string vehicleId)
@@ -20,7 +20,7 @@ namespace RentACar
 
             if (vehicleId == GetVehicleId() && GetStatus() == "Rented")
             {
-                Console.WriteLine($"id: {GetVehicleId()} - Status: {GetStatus()} - Days: {GetRentedDay()}");
+                
                 return BaseRate + (DailyRate * GetRentedDay());
             }
             else 
