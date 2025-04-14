@@ -12,24 +12,39 @@ namespace Hotel_Room_Booking_System
         {
             RentManager renter = new RentManager();
 
-            Car c1 = new Car("KL57N5968", "Swift", "Maruthi");
-            Car c2 = new Car("TN22CD5678", "i20", "Hyundai");
-            Car c3 = new Car("MH12EF9012", "Jazz", "Honda");
-            Car c4 = new Car("KA05GH3456", "Altroz", "Tata");
-            Car c5 = new Car("KL01AB1234", "Baleno", "Maruti");
-
-            renter.AddVehicle(c1);
-            renter.AddVehicle(c2);
-            renter.AddVehicle(c3);
-            renter.AddVehicle(c4);
-            renter.AddVehicle(c5);
-
-            renter.RentedAVehicle("TN22CD5678");
-            renter.RentedAVehicle("KA05GH3456");
+            // Car c1 = new Car("KL57N5968", "Swift", "Maruthi");
+            renter.AddVehicle(new Car("KL57N5968", "Swift", "Maruthi"));
+            renter.AddVehicle(new Car("TN22CD5678", "i20", "Hyundai"));
+            renter.AddVehicle(new Bike("KL05IJ7890", "Pulsar", "Bajaj"));
+            renter.AddVehicle(new Bike("KL06KL2345", "Splendor", "Hero"));
+            renter.AddVehicle(new Truck("KL09QR5678", "Eicher Pro", "Eicher"));
+            renter.AddVehicle(new Truck("KL10ST9012", "Prima", "Tata"));
 
             renter.DisplayDetails();
+            Console.WriteLine("================= ******==================");
 
+            renter.RentedAVehicle("TN22CD5678", 3);
+            renter.RentedAVehicle("KL05IJ7890", 3);
+            renter.RentedAVehicle("KL09QR5678", 3);
+
+            renter.DisplayDetails();
+            Console.WriteLine("================= ******==================");
+
+            renter.RentReport("TN22CD5678");
+            renter.RentReport("KL05IJ7890");
+            renter.RentReport("KL09QR5678");
+            renter.Return("TN22CD5678");
             
+            Console.WriteLine("===================================");
+
+            renter.Return("KL09QR5678");
+            renter.Return("KL05IJ7890");
+            renter.DisplayDetails();
+            Console.WriteLine("================= ******==================");
+
+
+            renter.RentReport("KL10ST9012");
+
 
 
 
