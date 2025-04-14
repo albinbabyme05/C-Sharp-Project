@@ -12,13 +12,10 @@ namespace RentACar
         public bool IsAvailable=true;
         private List<Vehicle> kart = new List<Vehicle>();
 
-<<<<<<< HEAD
-=======
         // print records
         private List<RentalRecord> rentalHistory = new List<RentalRecord>();
 
 
->>>>>>> rentAcar
         public void AddVehicle(Vehicle vehicle)
         {
             kart.Add(vehicle);
