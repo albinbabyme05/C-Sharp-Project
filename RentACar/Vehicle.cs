@@ -15,6 +15,7 @@ namespace RentACar
         protected string Brand;
         protected double RentRate;
         private string Status;
+        private int CountRentDay;
   
         
 
@@ -25,6 +26,8 @@ namespace RentACar
             Brand = brand;
             RentRate = 0;
             Status = "Available";
+            CountRentDay = 0;
+            
         }
 
         public void SetStatus(string status) { Status = status; }
@@ -38,8 +41,10 @@ namespace RentACar
         public void SetBrand(string brand) { Brand = brand; }
         public string GetBrand() => Brand;
 
+        public void SetRentedDay(int countRentDay) { CountRentDay = countRentDay; }
+        public int GetRentedDay() => CountRentDay;
 
-        public abstract double CalculateRent(int days);
+        public abstract double CalculateRent(string vehicleId);
         public  void DisplayDetails()
         {
             Console.WriteLine($"Model: {Model} - VechileId: {VehicleId} - Brand: {Brand} ");
