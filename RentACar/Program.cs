@@ -20,19 +20,27 @@ namespace Hotel_Room_Booking_System
             renter.AddVehicle(new Truck("KL09QR5678", "Eicher Pro", "Eicher"));
             renter.AddVehicle(new Truck("KL10ST9012", "Prima", "Tata"));
 
+            Customer cust1 = new Customer("Arjun", "C001", "9876543210");
+            Customer cust2 = new Customer("Neha", "C002", "9123456789");
+            Customer cust3 = new Customer("Rahul", "C003", "9988776655");
+
+
             renter.DisplayDetails();
             Console.WriteLine("================= ******==================");
 
-            renter.RentedAVehicle("TN22CD5678", 3);
-            renter.RentedAVehicle("KL05IJ7890", 3);
-            renter.RentedAVehicle("KL09QR5678", 3);
+            renter.RentedAVehicle("TN22CD5678", 3, cust1);
+            renter.RentedAVehicle("KL05IJ7890", 3, cust2);
+            renter.RentedAVehicle("KL09QR5678", 3, cust3);
 
             renter.DisplayDetails();
             Console.WriteLine("================= ******==================");
 
             renter.RentReport("TN22CD5678");
-            renter.RentReport("KL05IJ7890");
-            renter.RentReport("KL09QR5678");
+
+            Console.WriteLine("====================================== ******=============================================");
+            renter.PrintRentReport();
+            Console.WriteLine("====================================== ******=============================================");
+
             renter.Return("TN22CD5678");
             
             Console.WriteLine("===================================");
@@ -44,6 +52,8 @@ namespace Hotel_Room_Booking_System
 
 
             renter.RentReport("KL10ST9012");
+
+           
 
 
 
